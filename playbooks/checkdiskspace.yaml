@@ -4,6 +4,10 @@
   become: yes
 
   tasks:
+    - name: Debug
+      ansible.builtin.debug:
+      msg: "Trying to check disk space"
+      
     - name: Check Disk Space
       ansible.builtin.shell: df -h
       register: disk_space_output
