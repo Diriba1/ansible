@@ -1,1 +1,13 @@
+---
+- name: Check QEMU Guest Agent Status
+  hosts: all
+  become: yes
+  tasks:
+    - name: Check if the QEMU Guest Agent process is running
+      ansible.builtin.systemd:
+        name: qemu-guest-agent
+      register: qemu_agent_status
 
+    - name: Display QEMU Guest Agent process status
+      ansible.builtin.debug:
+        var: qemu_agent_status
