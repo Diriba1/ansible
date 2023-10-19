@@ -1,6 +1,6 @@
 ---
 - name: Check Disk Space
-  hosts: your_target_hosts
+  hosts: all
   become: yes
   gather_facts: yes
 
