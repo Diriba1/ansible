@@ -8,7 +8,6 @@
     - name: Check Disk Space
       ansible.builtin.shell: df -h
       register: disk_space_output
-      ignore_errors: yes
 
     - name: Display Disk Space
       ansible.builtin.debug:
